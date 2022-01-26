@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Social Media App</string>
+    <string name="home">Home</string>
+    <string name="notification">Notification</string>
+    <string name="add">Add</string>
+    <string name="search">Search</string>
+    <string name="Profile">Profile</string>
 </resources>
