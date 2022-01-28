@@ -10,7 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.socialmediaapp.Adapter.DashboardAdapter;
 import com.example.socialmediaapp.Adapter.StoryAdapter;
+import com.example.socialmediaapp.Model.DashboardModel;
 import com.example.socialmediaapp.Model.StoryModel;
 import com.example.socialmediaapp.R;
 
@@ -19,8 +21,9 @@ import java.util.ArrayList;
 
 public class homeFragment extends Fragment {
 
-    RecyclerView storyRv;
+    RecyclerView storyRv, dashboardRv;
     ArrayList<StoryModel> list;
+    ArrayList<DashboardModel> dashboardList;
 
     public homeFragment() {
         // Required empty public constructor
@@ -57,6 +60,23 @@ public class homeFragment extends Fragment {
         storyRv.setLayoutManager(linearLayoutManager);
         storyRv.setNestedScrollingEnabled(false);
         storyRv.setAdapter(adapter);
+
+
+        dashboardRv = view.findViewById(R.id.dashboardRv);
+        dashboardList = new ArrayList<>();
+
+        dashboardList.add(new DashboardModel(R.drawable.profile,R.drawable.profile,R.drawable.bookmark,"jwala bhai","Traveler", "122","58","15"));
+        dashboardList.add(new DashboardModel(R.drawable.profile,R.drawable.profile,R.drawable.bookmark,"jwala bhai","Traveler", "122","58","15"));
+        dashboardList.add(new DashboardModel(R.drawable.profile,R.drawable.profile,R.drawable.bookmark,"jwala bhai","Traveler", "122","58","15"));
+        dashboardList.add(new DashboardModel(R.drawable.profile,R.drawable.profile,R.drawable.bookmark,"jwala bhai","Traveler", "122","58","15"));
+        dashboardList.add(new DashboardModel(R.drawable.profile,R.drawable.profile,R.drawable.bookmark,"jwala bhai","Traveler", "122","58","15"));
+
+        DashboardAdapter dashboardAdapter = new DashboardAdapter(dashboardList,getContext());
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        dashboardRv.setLayoutManager(layoutManager);
+        dashboardRv.setNestedScrollingEnabled(false);
+        dashboardRv.setAdapter(dashboardAdapter);
 
         return view;
     }
