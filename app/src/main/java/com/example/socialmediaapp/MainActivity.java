@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.socialmediaapp.Fragment.AddFragment;
@@ -28,7 +30,13 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
+        setSupportActionBar(binding.toolbar);
+        MainActivity.this.setTitle("My Profile");
+
+
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        binding.toolbar.setVisibility(View.GONE);
         transaction.replace(R.id.container, new homeFragment());
         transaction.commit();
 
@@ -41,22 +49,27 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (item.getItemId()){
                     case R.id.home:
+                        binding.toolbar.setVisibility(View.GONE);
                         transaction.replace(R.id.container,new homeFragment());
                         break;
 
                     case R.id.notification:
+                        binding.toolbar.setVisibility(View.GONE);
                         transaction.replace(R.id.container,new NotificationFragment());
                         break;
 
                     case R.id.add:
+                        binding.toolbar.setVisibility(View.GONE);
                         transaction.replace(R.id.container,new AddFragment());
                         break;
 
                     case R.id.search:
+                        binding.toolbar.setVisibility(View.GONE);
                         transaction.replace(R.id.container,new SearchFragment());
                         break;
 
                     case R.id.profile:
+                        binding.toolbar.setVisibility(View.VISIBLE);
                         transaction.replace(R.id.container,new ProfileFragment());
                         break;
                 }
@@ -65,5 +78,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_item,menu);
+        return true;
     }
 }
