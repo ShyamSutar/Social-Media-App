@@ -68,7 +68,7 @@
 
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/passworT"
+            android:id="@+id/nameEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
@@ -98,7 +98,7 @@
 
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/passwo"
+            android:id="@+id/emailOfSignUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
@@ -128,6 +128,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nameET">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/profEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
