@@ -2,6 +2,19 @@ package com.example.socialmediaapp.Model;
 
 public class UserModel {
     private String name,profession,email,password;
+    private String coverPhoto;
+
+    public UserModel() {
+
+    }
+
+    public String getCoverPhoto() {
+        return coverPhoto;
+    }
+
+    public void setCoverPhoto(String coverPhoto) {
+        this.coverPhoto = coverPhoto;
+    }
 
     public UserModel(String name, String profession, String email, String password) {
         this.name = name;

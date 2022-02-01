@@ -4,26 +4,35 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.renderscript.ScriptGroup;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.socialmediaapp.Adapter.FriendAdapter;
 import com.example.socialmediaapp.Model.FriendModel;
+import com.example.socialmediaapp.Model.UserModel;
 import com.example.socialmediaapp.R;
+import com.example.socialmediaapp.databinding.ActivitySignUpBinding;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -37,6 +46,8 @@ public class ProfileFragment extends Fragment {
     FirebaseAuth auth;
     FirebaseStorage storage;
     FirebaseDatabase database;
+    TextView userNaam, profession;
+
 
 
     public ProfileFragment() {
@@ -64,8 +75,31 @@ public class ProfileFragment extends Fragment {
         storage = FirebaseStorage.getInstance();
         database = FirebaseDatabase.getInstance();
         recyclerView = view.findViewById(R.id.friendRv);
+        userNaam = view.findViewById(R.id.userNaam);
+        profession = view.findViewById(R.id.profession);
 
         list = new ArrayList<>();
+
+
+
+        database.getReference().child("Users").child(auth.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    UserModel user = snapshot.getValue(UserModel.class);
+                    Picasso.get().load(user.getCoverPhoto()).placeholder(R.drawable.placeholder).into(profileImage);
+
+                    userNaam.setText(user.getName());
+                    profession.setText(user.getProfession());
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         list.add(new FriendModel(R.drawable.profile));
         list.add(new FriendModel(R.drawable.profile));

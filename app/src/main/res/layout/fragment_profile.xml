@@ -79,12 +79,12 @@
         diagonal:layout_constraintVertical_bias="0.9" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/userNaam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:fontFamily="@font/acme"
-        android:text="Yuvraj Jha"
+        android:text="sdfsdfasfd dsf"
         android:textColor="@color/black"
         android:textSize="@dimen/_14font_mdp"
         android:textStyle="bold"
@@ -93,13 +93,13 @@
         diagonal:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/profession"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="student"
-        diagonal:layout_constraintEnd_toEndOf="@+id/textView"
-        diagonal:layout_constraintStart_toStartOf="@+id/textView"
-        diagonal:layout_constraintTop_toBottomOf="@+id/textView" />
+        diagonal:layout_constraintEnd_toEndOf="@+id/userNaam"
+        diagonal:layout_constraintStart_toStartOf="@+id/userNaam"
+        diagonal:layout_constraintTop_toBottomOf="@+id/userNaam" />
 
     <View
         android:id="@+id/callView"
@@ -112,7 +112,7 @@
         diagonal:layout_constraintEnd_toEndOf="parent"
         diagonal:layout_constraintHorizontal_bias="0.5"
         diagonal:layout_constraintStart_toEndOf="@+id/commentView"
-        diagonal:layout_constraintTop_toBottomOf="@+id/textView4" />
+        diagonal:layout_constraintTop_toBottomOf="@+id/profession" />
 
     <View
         android:id="@+id/commentView"
