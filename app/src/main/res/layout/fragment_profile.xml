@@ -21,14 +21,14 @@
             android:id="@+id/diagonalLayout"
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:elevation="30dp"
+            android:elevation="10dp"
             diagonal:diagonal_angle="10"
             diagonal:diagonal_direction="left"
             diagonal:diagonal_position="bottom">
 
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/profileImage3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
@@ -55,6 +55,16 @@
         diagonal:layout_constraintStart_toStartOf="@+id/linearLayout"
         diagonal:layout_constraintTop_toTopOf="@+id/linearLayout"
         diagonal:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/changeCoverPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_image_svgrepo_com"
+        diagonal:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        diagonal:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView4"
