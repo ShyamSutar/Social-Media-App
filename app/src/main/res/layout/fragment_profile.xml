@@ -44,7 +44,7 @@
 
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profileimage"
+        android:id="@+id/userProfile"
         android:layout_width="@dimen/_90mdp"
         android:layout_height="@dimen/_90mdp"
         android:src="@drawable/profile"
@@ -67,15 +67,15 @@
         diagonal:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/verifiedAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/checked"
-        diagonal:layout_constraintBottom_toBottomOf="@+id/profileimage"
-        diagonal:layout_constraintEnd_toEndOf="@+id/profileimage"
+        diagonal:layout_constraintBottom_toBottomOf="@+id/userProfile"
+        diagonal:layout_constraintEnd_toEndOf="@+id/userProfile"
         diagonal:layout_constraintHorizontal_bias="0.94"
-        diagonal:layout_constraintStart_toStartOf="@+id/profileimage"
-        diagonal:layout_constraintTop_toTopOf="@+id/profileimage"
+        diagonal:layout_constraintStart_toStartOf="@+id/userProfile"
+        diagonal:layout_constraintTop_toTopOf="@+id/userProfile"
         diagonal:layout_constraintVertical_bias="0.9" />
 
     <TextView
@@ -88,8 +88,8 @@
         android:textColor="@color/black"
         android:textSize="@dimen/_14font_mdp"
         android:textStyle="bold"
-        diagonal:layout_constraintEnd_toEndOf="@+id/profileimage"
-        diagonal:layout_constraintStart_toStartOf="@+id/profileimage"
+        diagonal:layout_constraintEnd_toEndOf="@+id/userProfile"
+        diagonal:layout_constraintStart_toStartOf="@+id/userProfile"
         diagonal:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <TextView
