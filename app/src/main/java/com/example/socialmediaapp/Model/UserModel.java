@@ -3,6 +3,7 @@ package com.example.socialmediaapp.Model;
 public class UserModel {
     private String name,profession,email,password;
     private String coverPhoto;
+    private String userID;
     private String profile;
 
     public UserModel() {
@@ -62,5 +63,13 @@ public class UserModel {
 
     public void setProfile(String profile) {
         this.profile = profile;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
 }

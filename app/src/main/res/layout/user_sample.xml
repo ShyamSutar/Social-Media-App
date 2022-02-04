@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:diagonal="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/userProfile"
+        android:layout_width="@dimen/_60mdp"
+        android:layout_height="@dimen/_60mdp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/profile"
+        diagonal:civ_border_color="@color/white"
+        diagonal:civ_border_width="5dp"
+        diagonal:layout_constraintStart_toStartOf="parent"
+        diagonal:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameUserSample"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14font_mdp"
+        diagonal:layout_constraintBottom_toTopOf="@+id/professionUserSample"
+        diagonal:layout_constraintStart_toEndOf="@+id/userProfile"
+        diagonal:layout_constraintTop_toTopOf="@+id/userProfile"
+        diagonal:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/professionUserSample"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        diagonal:layout_constraintBottom_toBottomOf="@+id/userProfile"
+        diagonal:layout_constraintStart_toStartOf="@+id/nameUserSample"
+        diagonal:layout_constraintTop_toBottomOf="@+id/nameUserSample" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/followBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/follor_btn_bg"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="Follow"
+        android:textColor="@color/white"
+        diagonal:layout_constraintBottom_toBottomOf="@+id/userProfile"
+        diagonal:layout_constraintEnd_toEndOf="parent"
+        diagonal:layout_constraintTop_toTopOf="@+id/userProfile" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
